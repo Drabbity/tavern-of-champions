@@ -2,6 +2,7 @@
 using Photon.Realtime;
 using UnityEngine;
 using TavernOfChampions.UI.Menu;
+using TavernOfChampions.Logging;
 
 namespace TavernOfChampions.Network.Menu
 {
@@ -18,6 +19,8 @@ namespace TavernOfChampions.Network.Menu
             roomOptions.MaxPlayers = _MAX_PLAYERS;
 
             PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
+            GameLogger.Instance.Info($"Room created with Name: {roomName}", LoggerType.NETWORK, this);
+
             _menuSwitcher.SwitchMenu(MenuType.ROOM_MENU);
         }
 

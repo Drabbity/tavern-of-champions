@@ -2,6 +2,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TavernOfChampions.Data;
 using UnityEngine;
+using TavernOfChampions.Logging;
 
 namespace TavernOfChampions.Network
 {
@@ -20,7 +21,7 @@ namespace TavernOfChampions.Network
 
         public override void OnConnectedToMaster()
         {
-            print($"Connected to Server as { PhotonNetwork.LocalPlayer.NickName }");
+            GameLogger.Instance.Info($"Connected to Server as { PhotonNetwork.LocalPlayer.NickName }", LoggerType.NETWORK, this);
 
             if (!PhotonNetwork.InLobby)
                 PhotonNetwork.JoinLobby();
@@ -30,7 +31,7 @@ namespace TavernOfChampions.Network
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            print($"Disconnected from Server. Cause: {cause.ToString()}");
+            GameLogger.Instance.Info($"Disconnected from Server. Cause: {cause.ToString()}", LoggerType.NETWORK, this);
         }
     }
 }
