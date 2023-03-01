@@ -19,7 +19,6 @@ namespace TavernOfChampions.Logging
             else
                 Warning("An instance of this Singleton already exists", LoggerType.GENERAL, this);
 
-            DontDestroyOnLoad(this);
             LogTypeDataToDict();
         }
 

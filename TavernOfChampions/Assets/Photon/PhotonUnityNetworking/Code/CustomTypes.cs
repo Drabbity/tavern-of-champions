@@ -14,6 +14,8 @@ namespace Photon.Pun
     using UnityEngine;
     using Photon.Realtime;
     using ExitGames.Client.Photon;
+    using System;
+    using System.Linq;
 
 
     /// <summary>
@@ -25,8 +27,56 @@ namespace Photon.Pun
         internal static void Register()
         {
             PhotonPeer.RegisterType(typeof(Player), (byte) 'P', SerializePhotonPlayer, DeserializePhotonPlayer);
+            PhotonPeer.RegisterType(typeof(Vector2Int), (byte) 'M', SerializeVector2Int, DeserializeVector2Int);
         }
 
+        private static byte[] SerializeVector2Int(object customObject)
+        {
+            Vector2Int vec = (Vector2Int)customObject;
+
+            byte[] xValueBytes = BitConverter.GetBytes(vec.x);
+            byte[] yValueBytes = BitConverter.GetBytes(vec.y);
+
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(xValueBytes);
+                Array.Reverse(yValueBytes);
+            }
+
+            return JoinByteArrays(xValueBytes, yValueBytes);
+        }
+        private static object DeserializeVector2Int(byte[] serializedCustomObject)
+        {
+            byte[] xValueBytes = new byte[4];
+            byte[] yValueBytes = new byte[4];
+
+            Array.Copy(serializedCustomObject, 0, xValueBytes, 0, 4);
+            Array.Copy(serializedCustomObject, 4, yValueBytes, 0, 4);
+
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(xValueBytes);
+                Array.Reverse(yValueBytes);
+            }
+
+            Vector2Int vector2Int = new Vector2Int();
+            vector2Int.x = BitConverter.ToInt32(xValueBytes);
+            vector2Int.y = BitConverter.ToInt32(yValueBytes);
+
+            return vector2Int;
+        }
+
+        private static byte[] JoinByteArrays(params byte[][] arrays)
+        {
+            byte[] rv = new byte[arrays.Sum(a => a.Length)];
+            int offset = 0;
+            foreach (byte[] array in arrays)
+            {
+                System.Buffer.BlockCopy(array, 0, rv, offset, array.Length);
+                offset += array.Length;
+            }
+            return rv;
+        }
 
         #region Custom De/Serializer Methods
 

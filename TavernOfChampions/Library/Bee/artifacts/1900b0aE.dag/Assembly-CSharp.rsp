@@ -404,6 +404,11 @@
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/Scripts/Camera/CameraDrag.cs"
 "Assets/Scripts/Camera/CameraZoom.cs"
+"Assets/Scripts/Champions/Actions/ActionSpawner.cs"
+"Assets/Scripts/Champions/Actions/KingMove.cs"
+"Assets/Scripts/Champions/Base/ChampionAction.cs"
+"Assets/Scripts/Champions/ChampionController.cs"
+"Assets/Scripts/Champions/UI/ActionCardsList.cs"
 "Assets/Scripts/Data/PlayerData.cs"
 "Assets/Scripts/Grid/GridManager.cs"
 "Assets/Scripts/Grid/GridTile.cs"
@@ -418,6 +423,7 @@
 "Assets/Scripts/Other/Bootstrapper.cs"
 "Assets/Scripts/UI/Menu/MenuSwitcher.cs"
 "Assets/Scripts/UI/Menu/ReadyButton.cs"
+"Assets/Scripts/UI/UIHoverListener.cs"
 -langversion:9.0
 
 /deterministic
