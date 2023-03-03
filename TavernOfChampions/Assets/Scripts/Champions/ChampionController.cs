@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using TavernOfChampions.Champion.Actions;
 using TavernOfChampions.Champion.Actions.UI;
 using TavernOfChampions.Grid;
@@ -14,32 +15,46 @@ namespace TavernOfChampions.Champion
             get { return _currentAction; }
             set
             {
-                _currentAction = value;
+                if(_turnManager.IsMyTurn || value == null)
+                {
+                    _currentAction = value;
 
-                if (_currentAction != null)
-                    _gridManager.GridVisualizer.HighlightTiles(_currentAction.GetLegalMoves());
-                else
-                    _gridManager.GridVisualizer.ClearHighlights();
+                    if (_currentAction != null)
+                        _gridManager.GridVisualizer.HighlightTiles(_currentAction.GetLegalMoves());
+                    else
+                        _gridManager.GridVisualizer.ClearHighlights();
+                }
             }
         }
         private ChampionAction _currentAction;
+
+        public Player Owner { get; private set; }
 
         public Vector2Int CurrentPosition { get; set; }
 
         [SerializeField] private ChampionAction[] _actions;
 
         private GridManager _gridManager;
+        private TurnManager _turnManager;
         
-        private void Start()
+        public void Initialize(GridManager gridManager, TurnManager turnManager, Vector2Int location, Player owner)
         {
-            _gridManager = GridManager.Instance;
+            _gridManager = gridManager;
+            _turnManager = turnManager;
+            CurrentPosition = location;
+            Owner = owner;
+
             InitializeActions();
+            _turnManager.OnMoveEnd += () => { _currentAction = null; };
         }
 
         public void Select()
         {
             ActionCardsList.Instance.ClearList();
-            ActionCardsList.Instance.PopulateList(_actions, this);
+            if(Owner == PhotonNetwork.LocalPlayer)
+            {
+                ActionCardsList.Instance.PopulateList(_actions, this);
+            }
         }
 
         public void DeSelect()

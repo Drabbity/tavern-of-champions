@@ -10,15 +10,10 @@ public class ActionSpawner : ChampionAction
 {
     [SerializeField] private ChampionController _spawnPrefab;
 
-    private void Start()
-    {
-        _gridManager = GridManager.Instance;
-    }
-
     [PunRPC]
     public override void Execute(Player player, Vector2Int tile)
     {
-        _gridManager.SpawnChampion(_spawnPrefab, tile);
+        _gridManager.SpawnChampion(_spawnPrefab, tile, player);
 
         if(PhotonNetwork.LocalPlayer == player)
             _championController.CurrentAction = null;

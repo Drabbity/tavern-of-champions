@@ -111,6 +111,7 @@
 -define:PUN_2_0_OR_NEWER
 -define:PUN_2_OR_NEWER
 -define:PUN_2_19_OR_NEWER
+-define:RH_SerializedDictionary
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll"
@@ -353,11 +354,13 @@
 "Assets/Scripts/Champions/Actions/KingMove.cs"
 "Assets/Scripts/Champions/Base/ChampionAction.cs"
 "Assets/Scripts/Champions/ChampionController.cs"
+"Assets/Scripts/Champions/ChampionList.cs"
 "Assets/Scripts/Champions/UI/ActionCardsList.cs"
 "Assets/Scripts/Data/PlayerData.cs"
 "Assets/Scripts/Grid/GridManager.cs"
 "Assets/Scripts/Grid/GridTile.cs"
 "Assets/Scripts/Grid/GridVisualizer.cs"
+"Assets/Scripts/Grid/TurnManager.cs"
 "Assets/Scripts/Helper/MouseHelper.cs"
 "Assets/Scripts/Logging/GameLogger.cs"
 "Assets/Scripts/Network/Connect.cs"
@@ -366,6 +369,7 @@
 "Assets/Scripts/Network/Menu/RoomCreate.cs"
 "Assets/Scripts/Network/Menu/RoomJoin.cs"
 "Assets/Scripts/Other/Bootstrapper.cs"
+"Assets/Scripts/Other/SerializableDictionary.cs"
 "Assets/Scripts/UI/Menu/MenuSwitcher.cs"
 "Assets/Scripts/UI/Menu/ReadyButton.cs"
 "Assets/Scripts/UI/UIHoverListener.cs"

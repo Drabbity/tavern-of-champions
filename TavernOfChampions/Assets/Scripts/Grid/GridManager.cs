@@ -3,6 +3,7 @@ using TavernOfChampions.Logging;
 using UnityEngine;
 using System.Linq;
 using Photon.Pun;
+using Photon.Realtime;
 
 namespace TavernOfChampions.Grid
 {
@@ -22,7 +23,7 @@ namespace TavernOfChampions.Grid
 
             private set
             {
-                _gridVisualizer.ClearHighlights();
+                GridVisualizer.ClearHighlights();
 
                 _selectedChampion?.DeSelect();
 
@@ -33,20 +34,12 @@ namespace TavernOfChampions.Grid
         }
         private ChampionController _selectedChampion = null;
 
-        public GridVisualizer GridVisualizer
-        { 
-            get => _gridVisualizer;
-            private set
-            {
-                _gridVisualizer = value;
-            }
-        }
-        [SerializeField] private GridVisualizer _gridVisualizer;
+        [field: SerializeField] public GridVisualizer GridVisualizer {  get; private set; }
+        [field: SerializeField] public Vector2Int GridSize { get; private set; }
 
-        public Vector2Int GridSize { get => _gridSize; private set { _gridSize = value; } }
-        [SerializeField] private Vector2Int _gridSize;
-
+        [SerializeField] private TurnManager _turnManager;
         [SerializeField] private ChampionController _championPrefab;
+        [SerializeField] private ChampionList _championList;
 
         private ChampionController[,] _championGrid;
         private GameObject _championParent;
@@ -64,8 +57,8 @@ namespace TavernOfChampions.Grid
 
         private void Start()
         {
-            _gridVisualizer.GenerateGrid(_gridSize);
-            _championGrid = GenerateChampionGrid(_gridSize);
+            GridVisualizer.GenerateGrid(GridSize);
+            _championGrid = GenerateChampionGrid(GridSize);
             _championParent = new GameObject("ChampionParent");
         }
 
@@ -79,27 +72,18 @@ namespace TavernOfChampions.Grid
         }
 
         [PunRPC]
-        public void SpawnChampions(Vector2Int location)
-        {
-            if (GetChampion(location))
-                return;
-            var champion = _championPrefab;
-            var tilePosition = _gridVisualizer.GetTilePosition(location);
+        public void SpawnChampion(string championName, Vector2Int location, Player owner)
+            => SpawnChampion(_championList.Champions["Default"], location, owner);
 
-            _championGrid[location.x, location.y] = Instantiate(champion, tilePosition, Quaternion.identity, _championParent.transform);
-            _championGrid[location.x, location.y].CurrentPosition = location;
-            GameLogger.Instance.Info($"Champion { champion } spawned at tile { location }", LoggerType.CHAMPION, this);
-        }
-
-        public void SpawnChampion(ChampionController champion, Vector2Int location)
+        public void SpawnChampion(ChampionController champion, Vector2Int location, Player owner)
         {
             if (GetChampion(location))
                 return;
 
-            var tilePosition = _gridVisualizer.GetTilePosition(location);
+            var tilePosition = GridVisualizer.GetTilePosition(location);
 
             _championGrid[location.x, location.y] = Instantiate(champion, tilePosition, Quaternion.identity, _championParent.transform);
-            _championGrid[location.x, location.y].CurrentPosition = location;
+            _championGrid[location.x, location.y].Initialize(this, _turnManager, location, owner);
             GameLogger.Instance.Info($"Champion { champion } spawned at tile { location }", LoggerType.CHAMPION, this);
         }
 
@@ -108,8 +92,7 @@ namespace TavernOfChampions.Grid
             if(_isSpawnState)
             {
                 _isSpawnState = false;
-                //SpawnChampion(_championPrefab, tile);
-                base.photonView.RPC("SpawnChampions", RpcTarget.All ,tile);
+                base.photonView.RPC("SpawnChampion", RpcTarget.All, "Default", tile, PhotonNetwork.LocalPlayer);
             }
             else
             {
@@ -153,7 +136,7 @@ namespace TavernOfChampions.Grid
             _championGrid[fromPosition.x, fromPosition.y] = null;
             _championGrid[toPosition.x, toPosition.y] = champion;
 
-            champion.transform.position = _gridVisualizer.GetTilePosition(toPosition);
+            champion.transform.position = GridVisualizer.GetTilePosition(toPosition);
         }
 
         private ChampionController[,] GenerateChampionGrid(Vector2Int gridSize)
@@ -161,7 +144,7 @@ namespace TavernOfChampions.Grid
 
         public void RotateBoard(bool isInverted)
         {
-            _gridVisualizer.RotateGrid(isInverted);
+            GridVisualizer.RotateGrid(isInverted);
             RotateChampions(isInverted);
         }
 
