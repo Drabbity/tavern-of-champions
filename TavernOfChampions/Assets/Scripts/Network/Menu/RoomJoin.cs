@@ -32,13 +32,5 @@ namespace TavernOfChampions.Network.Menu
 
             GameLogger.Instance.Warning($"Couldn't join room: { message }", LoggerType.NETWORK, this);
         }
-
-        public override void OnRoomListUpdate(List<RoomInfo> roomList)
-        {
-            foreach(var room in roomList)
-            {
-                print(room.Name);
-            }
-        }
     }
 }

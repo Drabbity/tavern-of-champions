@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionCardSprite: {fileID: 21300000, guid: 862153f75f22ac84a8e24132eeda2133, type: 3}
-  _moves: 10
+  _movesPerTurn: 10
 --- !u!114 &2141636326914011369
 MonoBehaviour:
   m_ObjectHideFlags: 0

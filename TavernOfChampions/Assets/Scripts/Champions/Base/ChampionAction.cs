@@ -14,7 +14,7 @@ namespace TavernOfChampions.Champion.Actions
         protected GridManager _gridManager;
         protected ChampionController _championController;
 
-        public void Initialize(GridManager gridManager, ChampionController championController)
+        public virtual void Initialize(GridManager gridManager, ChampionController championController, TurnManager turnManager)
         {
             _gridManager = gridManager;
             _championController = championController;
@@ -24,6 +24,7 @@ namespace TavernOfChampions.Champion.Actions
         [PunRPC]
         public abstract Vector2Int[] GetLegalMoves();
 
+        [PunRPC]
         public abstract void Execute(Player player, Vector2Int tile);
     }
 }

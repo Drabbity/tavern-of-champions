@@ -67,7 +67,7 @@ namespace TavernOfChampions.Champion
         {
             foreach (var action in _actions)
             {
-                action.Initialize(_gridManager, this);
+                action.Initialize(_gridManager, this, _turnManager);
             }
         }
     }
