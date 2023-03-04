@@ -4,12 +4,12 @@ using TavernOfChampions.Champion.Actions;
 using TavernOfChampions.Champion.Actions.UI;
 using TavernOfChampions.Grid;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace TavernOfChampions.Champion
 {
     public class ChampionController : MonoBehaviour
     {
+        [field: SerializeField] public Sprite ChampionBanner { get; private set; }
         public ChampionAction CurrentAction
         {
             get { return _currentAction; }
@@ -44,7 +44,7 @@ namespace TavernOfChampions.Champion
             _turnManager = turnManager;
             CurrentPosition = location;
             Owner = owner;
-
+            
             InitializeActions();
             _turnManager.OnMoveEnd += () => { _currentAction = null; };
             _outline.ChangeOutlineColor(owner != PhotonNetwork.LocalPlayer);

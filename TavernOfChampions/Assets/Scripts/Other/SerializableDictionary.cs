@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [Serializable]
-public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
+public class SerializableStringDictionary<TValue> : Dictionary<string, TValue>, ISerializationCallbackReceiver
 {
     [SerializeField] private List<KeyValue> _keyValue;
 
@@ -12,7 +12,7 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
     {
         _keyValue.Clear();
 
-        foreach (KeyValuePair<TKey, TValue> pair in this)
+        foreach (KeyValuePair<string, TValue> pair in this)
         {
             _keyValue.Add(new KeyValue(pair.Key, pair.Value));
         }
@@ -22,17 +22,22 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
     {
         this.Clear();
 
-        foreach(var keyValue in _keyValue)
-            this.Add(keyValue.Key, keyValue.Value);
+        foreach (var keyValue in _keyValue)
+        {
+            while (this.ContainsKey(keyValue.Key))
+                keyValue.Key += "*";
+
+             this.Add(keyValue.Key, keyValue.Value);
+        }
     }
 
     [Serializable]
     private class KeyValue
     {
 
-        public TKey Key;
+        public string Key;
         public TValue Value;
-        public KeyValue(TKey key, TValue value)
+        public KeyValue(string key, TValue value)
         {
             Key = key;
             Value = value;

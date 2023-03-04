@@ -38,13 +38,12 @@ namespace TavernOfChampions.Grid
         [field: SerializeField] public Vector2Int GridSize { get; private set; }
 
         [SerializeField] private TurnManager _turnManager;
-        [SerializeField] private ChampionController _championPrefab;
+        [SerializeField] private ChampionSelectionManager _selecitonManager;
         [SerializeField] private ChampionList _championList;
 
         private ChampionController[,] _championGrid;
         private GameObject _championParent;
 
-        private bool _isSpawnState = true;
         private bool _isBoardInverted = false;
 
         private void Awake()
@@ -60,6 +59,7 @@ namespace TavernOfChampions.Grid
             GridVisualizer.GenerateGrid(GridSize);
             _championGrid = GenerateChampionGrid(GridSize);
             _championParent = new GameObject("ChampionParent");
+            _selecitonManager.Initialize(_championList);
         }
 
         private void Update()
@@ -73,7 +73,7 @@ namespace TavernOfChampions.Grid
 
         [PunRPC]
         public void SpawnChampion(string championName, Vector2Int location, Player owner)
-            => SpawnChampion(_championList.Champions["Default"], location, owner);
+            => SpawnChampion(_championList.Champions[championName], location, owner);
 
         public void SpawnChampion(ChampionController champion, Vector2Int location, Player owner)
         {
@@ -89,10 +89,9 @@ namespace TavernOfChampions.Grid
 
         public void SelectTile(Vector2Int tile)
         {
-            if(_isSpawnState)
+            if(_selecitonManager.SelectedChampions.Any())
             {
-                _isSpawnState = false;
-                base.photonView.RPC("SpawnChampion", RpcTarget.All, "Default", tile, PhotonNetwork.LocalPlayer);
+                base.photonView.RPC("SpawnChampion", RpcTarget.All, _selecitonManager.SelectedChampions.Dequeue(), tile, PhotonNetwork.LocalPlayer);
             }
             else
             {

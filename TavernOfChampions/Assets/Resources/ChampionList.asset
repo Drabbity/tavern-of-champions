@@ -16,3 +16,13 @@ MonoBehaviour:
     _keyValue:
     - Key: Default
       Value: {fileID: 5272424573085687261, guid: fc60ecf4404de144ea8926e40777969c, type: 3}
+    - Key: Default2
+      Value: {fileID: 5272424573085687261, guid: fc60ecf4404de144ea8926e40777969c, type: 3}
+    - Key: Default3
+      Value: {fileID: 5272424573085687261, guid: fc60ecf4404de144ea8926e40777969c, type: 3}
+    - Key: Default4
+      Value: {fileID: 5272424573085687261, guid: d47b242724c240a4ba5404e8afabc393, type: 3}
+    - Key: Default5
+      Value: {fileID: 5272424573085687261, guid: d47b242724c240a4ba5404e8afabc393, type: 3}
+    - Key: Default6
+      Value: {fileID: 5272424573085687261, guid: d47b242724c240a4ba5404e8afabc393, type: 3}

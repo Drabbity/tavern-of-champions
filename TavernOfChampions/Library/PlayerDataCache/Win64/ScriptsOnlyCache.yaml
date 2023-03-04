@@ -9,6 +9,9 @@ ScriptsOnlyBuild:
     - TavernOfChampions.Champion.ChampionController
     - TavernOfChampions.Champion.ChampionList
     - TavernOfChampions.Champion.ChampionOutline
+    - TavernOfChampions.Champion.ChampionSelectionManager
+    - TavernOfChampions.GameState.GameState
+    - TavernOfChampions.GameState.GameStateManager
     - TavernOfChampions.Grid.GridManager
     - TavernOfChampions.Grid.GridTile
     - TavernOfChampions.Grid.GridVisualizer
@@ -19,9 +22,12 @@ ScriptsOnlyBuild:
     - TavernOfChampions.Network.Menu.PlayerReady
     - TavernOfChampions.Network.Menu.RoomCreate
     - TavernOfChampions.Network.Menu.RoomJoin
+    - TavernOfChampions.UI.ChampionSelection
+    - TavernOfChampions.UI.ChampionSelectionGrid
     - TavernOfChampions.UI.Menu.MenuSwitcher
     - TavernOfChampions.UI.Menu.ReadyButton
     - TavernOfChampions.UI.UIHoverListener
+    - UISwitcher
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
     Hierarchy2.Editor.dll:
@@ -84,10 +90,12 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
@@ -120,45 +128,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 3182}
+      Script: {instanceID: 2922}
     - Class: 114
-      Script: {instanceID: 3430}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 4212}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 4244}
+      Script: {instanceID: 4214}
     - Class: 114
-      Script: {instanceID: 5356}
+      Script: {instanceID: 4246}
     - Class: 114
-      Script: {instanceID: 5572}
+      Script: {instanceID: 4850}
     - Class: 114
-      Script: {instanceID: 5912}
+      Script: {instanceID: 5358}
     - Class: 114
-      Script: {instanceID: 6044}
+      Script: {instanceID: 5574}
     - Class: 114
-      Script: {instanceID: 6140}
+      Script: {instanceID: 5704}
     - Class: 114
-      Script: {instanceID: 6488}
+      Script: {instanceID: 5914}
     - Class: 114
-      Script: {instanceID: 6846}
+      Script: {instanceID: 6046}
     - Class: 114
-      Script: {instanceID: 6888}
+      Script: {instanceID: 6058}
     - Class: 114
-      Script: {instanceID: 7090}
+      Script: {instanceID: 6144}
     - Class: 114
-      Script: {instanceID: 7210}
+      Script: {instanceID: 6492}
     - Class: 114
-      Script: {instanceID: 7484}
+      Script: {instanceID: 6850}
     - Class: 114
-      Script: {instanceID: 7498}
+      Script: {instanceID: 6892}
     - Class: 114
-      Script: {instanceID: 8374}
+      Script: {instanceID: 6920}
     - Class: 114
-      Script: {instanceID: 8566}
+      Script: {instanceID: 7096}
     - Class: 114
-      Script: {instanceID: 9286}
+      Script: {instanceID: 7216}
+    - Class: 114
+      Script: {instanceID: 7490}
+    - Class: 114
+      Script: {instanceID: 7504}
+    - Class: 114
+      Script: {instanceID: 8202}
+    - Class: 114
+      Script: {instanceID: 8382}
+    - Class: 114
+      Script: {instanceID: 8574}
+    - Class: 114
+      Script: {instanceID: 8648}
+    - Class: 114
+      Script: {instanceID: 8912}
+    - Class: 114
+      Script: {instanceID: 9296}
+    - Class: 114
+      Script: {instanceID: 9584}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -237,77 +263,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2498}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 2922}
     - Class: 114
-      Script: {instanceID: 3182}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3430}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3986}
     - Class: 114
-      Script: {instanceID: 4212}
-    - Class: 114
-      Script: {instanceID: 4486}
+      Script: {instanceID: 4214}
     - Class: 114
       Script: {instanceID: 4488}
     - Class: 114
-      Script: {instanceID: 4688}
+      Script: {instanceID: 4490}
     - Class: 114
-      Script: {instanceID: 4848}
+      Script: {instanceID: 4690}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4850}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 4878}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 5212}
     - Class: 114
-      Script: {instanceID: 5356}
+      Script: {instanceID: 5298}
     - Class: 114
-      Script: {instanceID: 5632}
+      Script: {instanceID: 5358}
     - Class: 114
-      Script: {instanceID: 5888}
+      Script: {instanceID: 5634}
     - Class: 114
-      Script: {instanceID: 6032}
+      Script: {instanceID: 5890}
     - Class: 114
-      Script: {instanceID: 6042}
+      Script: {instanceID: 6034}
     - Class: 114
-      Script: {instanceID: 6064}
+      Script: {instanceID: 6044}
     - Class: 114
-      Script: {instanceID: 6100}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 6140}
+      Script: {instanceID: 6104}
     - Class: 114
-      Script: {instanceID: 6588}
+      Script: {instanceID: 6144}
     - Class: 114
-      Script: {instanceID: 6638}
+      Script: {instanceID: 6592}
     - Class: 114
-      Script: {instanceID: 6648}
+      Script: {instanceID: 6642}
     - Class: 114
-      Script: {instanceID: 6888}
+      Script: {instanceID: 6652}
     - Class: 114
-      Script: {instanceID: 7090}
+      Script: {instanceID: 6892}
     - Class: 114
-      Script: {instanceID: 7210}
+      Script: {instanceID: 7096}
     - Class: 114
-      Script: {instanceID: 7498}
+      Script: {instanceID: 7216}
     - Class: 114
-      Script: {instanceID: 7506}
+      Script: {instanceID: 7504}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 7512}
     - Class: 114
-      Script: {instanceID: 8566}
+      Script: {instanceID: 8254}
     - Class: 114
-      Script: {instanceID: 8650}
+      Script: {instanceID: 8574}
     - Class: 114
-      Script: {instanceID: 8898}
+      Script: {instanceID: 8660}
     - Class: 114
-      Script: {instanceID: 9286}
+      Script: {instanceID: 8908}
     - Class: 114
-      Script: {instanceID: 9378}
+      Script: {instanceID: 9296}
     - Class: 114
-      Script: {instanceID: 9540}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9916}
+      Script: {instanceID: 9550}
+    - Class: 114
+      Script: {instanceID: 9928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -621,6 +647,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Grid
     className: TurnManager
+  - hash:
+      serializedVersion: 2
+      Hash: ca2c09c15fba47bc5585d9d9e23bfc91
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Champion
+    className: ChampionSelectionManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -971,7 +1003,7 @@ ScriptsOnlyBuild:
     className: SetRoomCustomPropertyUIForm
   - hash:
       serializedVersion: 2
-      Hash: f32980a9ae5c9a3301e39d02cd5502aa
+      Hash: b063812d70d9c58f25ad73c6b0f5abd4
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion
     className: ChampionController
@@ -1433,6 +1465,12 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 09d7aac66f2adfa9e4d6a7461a53bfae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UISwitcher
+  - hash:
+      serializedVersion: 2
       Hash: 55fd795e51da61232a17e9ce0af59f52
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Asteroids
@@ -1517,7 +1555,7 @@ ScriptsOnlyBuild:
     className: UnityOnDeselectMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 24ccc9a565da66ec3a407e12736738b1
+      Hash: 42860f7bb3af4f4370823d0ba27a1648
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Grid
     className: GridManager
@@ -1605,6 +1643,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.UI
+    className: ChampionSelection
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1835,6 +1879,12 @@ ScriptsOnlyBuild:
     className: ServerProperty
   - hash:
       serializedVersion: 2
+      Hash: 1f21af9c142db5d8e40dc68dc8cccee3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.UI
+    className: ChampionSelectionGrid
+  - hash:
+      serializedVersion: 2
       Hash: cba6cca6bb3290c4c00d709cf63843db
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1955,7 +2005,7 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 361635b9e550a0563cff6cc190696b1c
+      Hash: 64c97d697975dd3b44f532be0c254078
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion
     className: ChampionList
@@ -1983,6 +2033,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Photon.Chat.Demo
     className: FriendItem
+  - hash:
+      serializedVersion: 2
+      Hash: a238b62808f6d0cbb12abb3bf292538d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.GameState
+    className: GameState
   - hash:
       serializedVersion: 2
       Hash: 279504f898cdad4130bfcae70441b6ce
@@ -2199,6 +2255,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.dll
     namespaceName: Photon.Pun
     className: ServerSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 59db7ab14ff44c08e5299e8013297847
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.GameState
+    className: GameStateManager
   - hash:
       serializedVersion: 2
       Hash: e1e615eaf73e560828f53edc8952e615

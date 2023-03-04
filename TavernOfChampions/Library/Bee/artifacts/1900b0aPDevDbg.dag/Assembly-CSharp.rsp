@@ -356,8 +356,11 @@
 "Assets/Scripts/Champions/ChampionController.cs"
 "Assets/Scripts/Champions/ChampionList.cs"
 "Assets/Scripts/Champions/ChampionOutline.cs"
+"Assets/Scripts/Champions/ChampionSelectionManager.cs"
 "Assets/Scripts/Champions/UI/ActionCardsList.cs"
 "Assets/Scripts/Data/PlayerData.cs"
+"Assets/Scripts/GameState/GameState.cs"
+"Assets/Scripts/GameState/GameStateManager.cs"
 "Assets/Scripts/Grid/GridManager.cs"
 "Assets/Scripts/Grid/GridTile.cs"
 "Assets/Scripts/Grid/GridVisualizer.cs"
@@ -371,9 +374,12 @@
 "Assets/Scripts/Network/Menu/RoomJoin.cs"
 "Assets/Scripts/Other/Bootstrapper.cs"
 "Assets/Scripts/Other/SerializableDictionary.cs"
+"Assets/Scripts/UI/ChampionSelection.cs"
+"Assets/Scripts/UI/ChampionSelectionGrid.cs"
 "Assets/Scripts/UI/Menu/MenuSwitcher.cs"
 "Assets/Scripts/UI/Menu/ReadyButton.cs"
 "Assets/Scripts/UI/UIHoverListener.cs"
+"Assets/Scripts/UI/UISwitcher.cs"
 -langversion:9.0
 
 /deterministic

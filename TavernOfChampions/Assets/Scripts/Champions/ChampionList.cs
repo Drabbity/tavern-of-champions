@@ -7,6 +7,6 @@ namespace TavernOfChampions.Champion
     [CreateAssetMenu(fileName = "NewChampionList", menuName = "ChampionList")]
     public class ChampionList : ScriptableObject
     {
-        [field: SerializeField] public SerializableDictionary<string, ChampionController> Champions { get; private set; }
+        [field: SerializeField] public SerializableStringDictionary<ChampionController> Champions { get; private set; }
     }
 }
