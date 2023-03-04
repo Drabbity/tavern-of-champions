@@ -410,6 +410,7 @@
 "Assets/Scripts/Champions/Base/ChampionAction.cs"
 "Assets/Scripts/Champions/ChampionController.cs"
 "Assets/Scripts/Champions/ChampionList.cs"
+"Assets/Scripts/Champions/ChampionOutline.cs"
 "Assets/Scripts/Champions/UI/ActionCardsList.cs"
 "Assets/Scripts/Data/PlayerData.cs"
 "Assets/Scripts/Grid/GridManager.cs"

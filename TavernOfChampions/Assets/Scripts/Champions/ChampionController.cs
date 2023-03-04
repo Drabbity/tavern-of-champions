@@ -33,6 +33,7 @@ namespace TavernOfChampions.Champion
         public Vector2Int CurrentPosition { get; set; }
 
         [SerializeField] private ChampionAction[] _actions;
+        [SerializeField] private ChampionOutline _outline;
 
         private GridManager _gridManager;
         private TurnManager _turnManager;
@@ -46,6 +47,7 @@ namespace TavernOfChampions.Champion
 
             InitializeActions();
             _turnManager.OnMoveEnd += () => { _currentAction = null; };
+            _outline.ChangeOutlineColor(owner != PhotonNetwork.LocalPlayer);
         }
 
         public void Select()

@@ -154,7 +154,14 @@ namespace TavernOfChampions.Grid
             currentRotation.z = (isInverted ? 180f : 0);
 
             _championParent.transform.eulerAngles = currentRotation;
+
+            foreach (var champion in _championParent.GetComponentsInChildren<ChampionController>())
+            {
+                var championRotation = champion.transform.eulerAngles;
+                championRotation.z = 0;
+
+                champion.transform.eulerAngles = championRotation;
+            }
         }
     }
 }
-
