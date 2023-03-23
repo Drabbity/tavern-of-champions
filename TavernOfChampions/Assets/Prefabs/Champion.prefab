@@ -215,6 +215,9 @@ MonoBehaviour:
   - {fileID: 2634318680570681554}
   - {fileID: 7708836545277282861}
   _outline: {fileID: 6650858859540204575}
+  _maxHp: 20
+  _maxArmor: 10
+  _block: 2
 --- !u!1 &6469931686442191523
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionCardSprite: {fileID: 21300000, guid: 862153f75f22ac84a8e24132eeda2133, type: 3}
-  _moves: 5
+  _movesPerTurn: 5
 --- !u!114 &2141636326914011369
 MonoBehaviour:
   m_ObjectHideFlags: 0

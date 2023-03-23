@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - TavernOfChampions.CameraMovement.CameraZoom
     - TavernOfChampions.Champion.Actions.ActionSpawner
     - TavernOfChampions.Champion.Actions.KingMove
+    - TavernOfChampions.Champion.Actions.RangedAttack
     - TavernOfChampions.Champion.Actions.UI.ActionCardsList
     - TavernOfChampions.Champion.ChampionController
     - TavernOfChampions.Champion.ChampionList
@@ -126,65 +127,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 2704}
+      Script: {instanceID: 2706}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2750}
     - Class: 114
-      Script: {instanceID: 2922}
+      Script: {instanceID: 2924}
     - Class: 114
-      Script: {instanceID: 3184}
+      Script: {instanceID: 3186}
     - Class: 114
-      Script: {instanceID: 3432}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 4214}
+      Script: {instanceID: 4216}
     - Class: 114
-      Script: {instanceID: 4246}
+      Script: {instanceID: 4248}
     - Class: 114
-      Script: {instanceID: 4850}
+      Script: {instanceID: 4852}
     - Class: 114
-      Script: {instanceID: 5358}
+      Script: {instanceID: 5360}
     - Class: 114
-      Script: {instanceID: 5574}
+      Script: {instanceID: 5576}
     - Class: 114
-      Script: {instanceID: 5704}
+      Script: {instanceID: 5706}
     - Class: 114
-      Script: {instanceID: 5914}
+      Script: {instanceID: 5916}
     - Class: 114
-      Script: {instanceID: 6046}
+      Script: {instanceID: 6048}
     - Class: 114
-      Script: {instanceID: 6058}
+      Script: {instanceID: 6060}
     - Class: 114
-      Script: {instanceID: 6144}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6492}
+      Script: {instanceID: 6494}
     - Class: 114
-      Script: {instanceID: 6850}
+      Script: {instanceID: 6852}
     - Class: 114
-      Script: {instanceID: 6892}
+      Script: {instanceID: 6894}
     - Class: 114
-      Script: {instanceID: 6920}
+      Script: {instanceID: 6922}
     - Class: 114
-      Script: {instanceID: 7096}
+      Script: {instanceID: 7098}
     - Class: 114
-      Script: {instanceID: 7216}
+      Script: {instanceID: 7218}
     - Class: 114
-      Script: {instanceID: 7490}
+      Script: {instanceID: 7492}
     - Class: 114
-      Script: {instanceID: 7504}
+      Script: {instanceID: 7506}
     - Class: 114
-      Script: {instanceID: 8202}
+      Script: {instanceID: 8204}
     - Class: 114
-      Script: {instanceID: 8382}
+      Script: {instanceID: 8384}
     - Class: 114
-      Script: {instanceID: 8574}
+      Script: {instanceID: 8576}
     - Class: 114
-      Script: {instanceID: 8648}
+      Script: {instanceID: 8650}
     - Class: 114
-      Script: {instanceID: 8912}
+      Script: {instanceID: 8914}
     - Class: 114
-      Script: {instanceID: 9296}
+      Script: {instanceID: 9298}
     - Class: 114
-      Script: {instanceID: 9584}
+      Script: {instanceID: 9586}
+    - Class: 114
+      Script: {instanceID: 26582}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -255,85 +258,87 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1788}
     - Class: 114
-      Script: {instanceID: 1872}
+      Script: {instanceID: 1874}
     - Class: 114
-      Script: {instanceID: 2020}
+      Script: {instanceID: 2022}
     - Class: 114
-      Script: {instanceID: 2372}
+      Script: {instanceID: 2374}
     - Class: 114
-      Script: {instanceID: 2498}
+      Script: {instanceID: 2500}
     - Class: 114
-      Script: {instanceID: 2922}
+      Script: {instanceID: 2924}
     - Class: 114
-      Script: {instanceID: 3184}
+      Script: {instanceID: 3186}
     - Class: 114
-      Script: {instanceID: 3432}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3986}
+      Script: {instanceID: 3988}
     - Class: 114
-      Script: {instanceID: 4214}
-    - Class: 114
-      Script: {instanceID: 4488}
+      Script: {instanceID: 4216}
     - Class: 114
       Script: {instanceID: 4490}
     - Class: 114
-      Script: {instanceID: 4690}
+      Script: {instanceID: 4492}
     - Class: 114
-      Script: {instanceID: 4850}
+      Script: {instanceID: 4692}
     - Class: 114
-      Script: {instanceID: 4878}
+      Script: {instanceID: 4852}
     - Class: 114
-      Script: {instanceID: 5212}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 5298}
+      Script: {instanceID: 5214}
     - Class: 114
-      Script: {instanceID: 5358}
+      Script: {instanceID: 5300}
     - Class: 114
-      Script: {instanceID: 5634}
+      Script: {instanceID: 5360}
     - Class: 114
-      Script: {instanceID: 5890}
+      Script: {instanceID: 5636}
     - Class: 114
-      Script: {instanceID: 6034}
+      Script: {instanceID: 5892}
     - Class: 114
-      Script: {instanceID: 6044}
+      Script: {instanceID: 6036}
     - Class: 114
-      Script: {instanceID: 6068}
+      Script: {instanceID: 6046}
     - Class: 114
-      Script: {instanceID: 6104}
+      Script: {instanceID: 6070}
     - Class: 114
-      Script: {instanceID: 6144}
+      Script: {instanceID: 6106}
     - Class: 114
-      Script: {instanceID: 6592}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6642}
+      Script: {instanceID: 6594}
     - Class: 114
-      Script: {instanceID: 6652}
+      Script: {instanceID: 6644}
     - Class: 114
-      Script: {instanceID: 6892}
+      Script: {instanceID: 6654}
     - Class: 114
-      Script: {instanceID: 7096}
+      Script: {instanceID: 6894}
     - Class: 114
-      Script: {instanceID: 7216}
+      Script: {instanceID: 7098}
     - Class: 114
-      Script: {instanceID: 7504}
+      Script: {instanceID: 7218}
     - Class: 114
-      Script: {instanceID: 7512}
+      Script: {instanceID: 7506}
     - Class: 114
-      Script: {instanceID: 8254}
+      Script: {instanceID: 7514}
     - Class: 114
-      Script: {instanceID: 8574}
+      Script: {instanceID: 8256}
     - Class: 114
-      Script: {instanceID: 8660}
+      Script: {instanceID: 8576}
     - Class: 114
-      Script: {instanceID: 8908}
+      Script: {instanceID: 8662}
     - Class: 114
-      Script: {instanceID: 9296}
+      Script: {instanceID: 8910}
     - Class: 114
-      Script: {instanceID: 9388}
+      Script: {instanceID: 9298}
     - Class: 114
-      Script: {instanceID: 9550}
+      Script: {instanceID: 9390}
     - Class: 114
-      Script: {instanceID: 9928}
+      Script: {instanceID: 9552}
+    - Class: 114
+      Script: {instanceID: 9930}
+    - Class: 114
+      Script: {instanceID: 26582}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1003,7 +1008,7 @@ ScriptsOnlyBuild:
     className: SetRoomCustomPropertyUIForm
   - hash:
       serializedVersion: 2
-      Hash: b063812d70d9c58f25ad73c6b0f5abd4
+      Hash: 70292dfa443731c0a6c289f36107d030
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion
     className: ChampionController
@@ -2351,6 +2356,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 99d7dda0dca2a6eec657f3a705c3d595
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Champion.Actions
+    className: RangedAttack
   platform: 19
   scenePathNames:
   - Assets/Scenes/Rooms.unity
