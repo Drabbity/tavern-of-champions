@@ -108,7 +108,6 @@ namespace TavernOfChampions.Grid
                 }
                 else
                 {
-                    SelectedChampion.CurrentAction.photonView.RPC("GetLegalMoves", RpcTarget.Others);
                     SelectedChampion.CurrentAction.photonView.RPC("Execute", RpcTarget.All, PhotonNetwork.LocalPlayer, tile);
                 }
             }

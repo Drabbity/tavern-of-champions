@@ -406,6 +406,7 @@
 "Assets/Scripts/Camera/CameraDrag.cs"
 "Assets/Scripts/Camera/CameraZoom.cs"
 "Assets/Scripts/Champions/Actions/ActionSpawner.cs"
+"Assets/Scripts/Champions/Actions/General/LegalTileValidation.cs"
 "Assets/Scripts/Champions/Actions/KingMove.cs"
 "Assets/Scripts/Champions/Base/ChampionAction.cs"
 "Assets/Scripts/Champions/ChampionController.cs"

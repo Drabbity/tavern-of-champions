@@ -1,9 +1,9 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ActionSpawner
     - TavernOfChampions.CameraMovement.CameraDrag
     - TavernOfChampions.CameraMovement.CameraZoom
+    - TavernOfChampions.Champion.Actions.ActionSpawner
     - TavernOfChampions.Champion.Actions.KingMove
     - TavernOfChampions.Champion.Actions.UI.ActionCardsList
     - TavernOfChampions.Champion.ChampionController
@@ -55,6 +55,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -125,65 +126,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2750}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 2922}
     - Class: 114
-      Script: {instanceID: 3186}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 4216}
+      Script: {instanceID: 4214}
     - Class: 114
-      Script: {instanceID: 4248}
+      Script: {instanceID: 4246}
     - Class: 114
-      Script: {instanceID: 4852}
+      Script: {instanceID: 4850}
     - Class: 114
-      Script: {instanceID: 5360}
+      Script: {instanceID: 5358}
     - Class: 114
-      Script: {instanceID: 5576}
+      Script: {instanceID: 5574}
     - Class: 114
-      Script: {instanceID: 5706}
+      Script: {instanceID: 5704}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 5914}
     - Class: 114
-      Script: {instanceID: 6048}
+      Script: {instanceID: 6046}
     - Class: 114
-      Script: {instanceID: 6060}
+      Script: {instanceID: 6058}
     - Class: 114
-      Script: {instanceID: 6146}
+      Script: {instanceID: 6144}
     - Class: 114
-      Script: {instanceID: 6494}
+      Script: {instanceID: 6492}
     - Class: 114
-      Script: {instanceID: 6852}
+      Script: {instanceID: 6850}
     - Class: 114
-      Script: {instanceID: 6894}
+      Script: {instanceID: 6892}
     - Class: 114
-      Script: {instanceID: 6922}
+      Script: {instanceID: 6920}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7096}
     - Class: 114
-      Script: {instanceID: 7218}
+      Script: {instanceID: 7216}
     - Class: 114
-      Script: {instanceID: 7492}
+      Script: {instanceID: 7490}
     - Class: 114
-      Script: {instanceID: 7506}
+      Script: {instanceID: 7504}
     - Class: 114
-      Script: {instanceID: 8204}
+      Script: {instanceID: 8202}
     - Class: 114
-      Script: {instanceID: 8384}
+      Script: {instanceID: 8382}
     - Class: 114
-      Script: {instanceID: 8576}
+      Script: {instanceID: 8574}
     - Class: 114
-      Script: {instanceID: 8650}
+      Script: {instanceID: 8648}
     - Class: 114
-      Script: {instanceID: 8914}
+      Script: {instanceID: 8912}
     - Class: 114
-      Script: {instanceID: 9298}
+      Script: {instanceID: 9296}
     - Class: 114
-      Script: {instanceID: 9586}
+      Script: {instanceID: 9584}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -250,89 +251,89 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 1692}
+      Script: {instanceID: 1690}
     - Class: 114
-      Script: {instanceID: 1790}
+      Script: {instanceID: 1788}
     - Class: 114
-      Script: {instanceID: 1874}
+      Script: {instanceID: 1872}
     - Class: 114
-      Script: {instanceID: 2022}
+      Script: {instanceID: 2020}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 2500}
+      Script: {instanceID: 2498}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 2922}
     - Class: 114
-      Script: {instanceID: 3186}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 3988}
+      Script: {instanceID: 3986}
     - Class: 114
-      Script: {instanceID: 4216}
+      Script: {instanceID: 4214}
+    - Class: 114
+      Script: {instanceID: 4488}
     - Class: 114
       Script: {instanceID: 4490}
     - Class: 114
-      Script: {instanceID: 4492}
+      Script: {instanceID: 4690}
     - Class: 114
-      Script: {instanceID: 4692}
+      Script: {instanceID: 4850}
     - Class: 114
-      Script: {instanceID: 4852}
+      Script: {instanceID: 4878}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 5212}
     - Class: 114
-      Script: {instanceID: 5214}
+      Script: {instanceID: 5298}
     - Class: 114
-      Script: {instanceID: 5300}
+      Script: {instanceID: 5358}
     - Class: 114
-      Script: {instanceID: 5360}
+      Script: {instanceID: 5634}
     - Class: 114
-      Script: {instanceID: 5636}
+      Script: {instanceID: 5890}
     - Class: 114
-      Script: {instanceID: 5892}
+      Script: {instanceID: 6034}
     - Class: 114
-      Script: {instanceID: 6036}
+      Script: {instanceID: 6044}
     - Class: 114
-      Script: {instanceID: 6046}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 6070}
+      Script: {instanceID: 6104}
     - Class: 114
-      Script: {instanceID: 6106}
+      Script: {instanceID: 6144}
     - Class: 114
-      Script: {instanceID: 6146}
+      Script: {instanceID: 6592}
     - Class: 114
-      Script: {instanceID: 6594}
+      Script: {instanceID: 6642}
     - Class: 114
-      Script: {instanceID: 6644}
+      Script: {instanceID: 6652}
     - Class: 114
-      Script: {instanceID: 6654}
+      Script: {instanceID: 6892}
     - Class: 114
-      Script: {instanceID: 6894}
+      Script: {instanceID: 7096}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7216}
     - Class: 114
-      Script: {instanceID: 7218}
+      Script: {instanceID: 7504}
     - Class: 114
-      Script: {instanceID: 7506}
+      Script: {instanceID: 7512}
     - Class: 114
-      Script: {instanceID: 7514}
+      Script: {instanceID: 8254}
     - Class: 114
-      Script: {instanceID: 8256}
+      Script: {instanceID: 8574}
     - Class: 114
-      Script: {instanceID: 8576}
+      Script: {instanceID: 8660}
     - Class: 114
-      Script: {instanceID: 8662}
+      Script: {instanceID: 8908}
     - Class: 114
-      Script: {instanceID: 8910}
+      Script: {instanceID: 9296}
     - Class: 114
-      Script: {instanceID: 9298}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9390}
+      Script: {instanceID: 9550}
     - Class: 114
-      Script: {instanceID: 9552}
-    - Class: 114
-      Script: {instanceID: 9930}
+      Script: {instanceID: 9928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2180,7 +2181,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: b434e11a76d98cd9e18ac5e3561c70f3
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: TavernOfChampions.Champion.Actions
     className: ActionSpawner
   - hash:
       serializedVersion: 2

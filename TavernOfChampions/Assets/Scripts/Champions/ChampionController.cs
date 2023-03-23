@@ -15,7 +15,7 @@ namespace TavernOfChampions.Champion
             get { return _currentAction; }
             set
             {
-                if(_turnManager.IsMyTurn || value == null)
+                if(PhotonNetwork.LocalPlayer == Owner && (_turnManager.IsMyTurn || value == null))
                 {
                     _currentAction = value;
 
