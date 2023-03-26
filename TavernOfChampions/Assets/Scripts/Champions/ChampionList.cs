@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using TavernOfChampions.Champion;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TavernOfChampions.Champion
 {

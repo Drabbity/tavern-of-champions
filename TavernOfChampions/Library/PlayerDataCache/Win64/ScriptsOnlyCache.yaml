@@ -3,9 +3,8 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - TavernOfChampions.CameraMovement.CameraDrag
     - TavernOfChampions.CameraMovement.CameraZoom
-    - TavernOfChampions.Champion.Actions.ActionSpawner
-    - TavernOfChampions.Champion.Actions.KingMove
-    - TavernOfChampions.Champion.Actions.RangedAttack
+    - TavernOfChampions.Champion.Actions.BasicAttack
+    - TavernOfChampions.Champion.Actions.BasicMove
     - TavernOfChampions.Champion.Actions.UI.ActionCardsList
     - TavernOfChampions.Champion.ChampionController
     - TavernOfChampions.Champion.ChampionList
@@ -141,53 +140,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4248}
     - Class: 114
-      Script: {instanceID: 4852}
+      Script: {instanceID: 4818}
     - Class: 114
-      Script: {instanceID: 5360}
+      Script: {instanceID: 4854}
     - Class: 114
-      Script: {instanceID: 5576}
+      Script: {instanceID: 5362}
     - Class: 114
-      Script: {instanceID: 5706}
+      Script: {instanceID: 5578}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 5708}
     - Class: 114
-      Script: {instanceID: 6048}
+      Script: {instanceID: 5918}
     - Class: 114
-      Script: {instanceID: 6060}
+      Script: {instanceID: 6050}
     - Class: 114
-      Script: {instanceID: 6146}
+      Script: {instanceID: 6062}
     - Class: 114
-      Script: {instanceID: 6494}
+      Script: {instanceID: 6148}
     - Class: 114
-      Script: {instanceID: 6852}
+      Script: {instanceID: 6496}
     - Class: 114
-      Script: {instanceID: 6894}
+      Script: {instanceID: 6854}
     - Class: 114
-      Script: {instanceID: 6922}
+      Script: {instanceID: 6896}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 6924}
     - Class: 114
-      Script: {instanceID: 7218}
+      Script: {instanceID: 7100}
     - Class: 114
-      Script: {instanceID: 7492}
+      Script: {instanceID: 7220}
     - Class: 114
-      Script: {instanceID: 7506}
+      Script: {instanceID: 7496}
     - Class: 114
-      Script: {instanceID: 8204}
+      Script: {instanceID: 7510}
     - Class: 114
-      Script: {instanceID: 8384}
+      Script: {instanceID: 8210}
     - Class: 114
-      Script: {instanceID: 8576}
+      Script: {instanceID: 8390}
     - Class: 114
-      Script: {instanceID: 8650}
+      Script: {instanceID: 8582}
     - Class: 114
-      Script: {instanceID: 8914}
+      Script: {instanceID: 8656}
     - Class: 114
-      Script: {instanceID: 9298}
+      Script: {instanceID: 8920}
     - Class: 114
-      Script: {instanceID: 9586}
-    - Class: 114
-      Script: {instanceID: 26582}
+      Script: {instanceID: 9592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -282,63 +279,61 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4692}
     - Class: 114
-      Script: {instanceID: 4852}
+      Script: {instanceID: 4818}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 4854}
     - Class: 114
-      Script: {instanceID: 5214}
+      Script: {instanceID: 4882}
     - Class: 114
-      Script: {instanceID: 5300}
+      Script: {instanceID: 5216}
     - Class: 114
-      Script: {instanceID: 5360}
+      Script: {instanceID: 5302}
     - Class: 114
-      Script: {instanceID: 5636}
+      Script: {instanceID: 5362}
     - Class: 114
-      Script: {instanceID: 5892}
+      Script: {instanceID: 5638}
     - Class: 114
-      Script: {instanceID: 6036}
+      Script: {instanceID: 5894}
     - Class: 114
-      Script: {instanceID: 6046}
+      Script: {instanceID: 6038}
     - Class: 114
-      Script: {instanceID: 6070}
+      Script: {instanceID: 6048}
     - Class: 114
-      Script: {instanceID: 6106}
+      Script: {instanceID: 6072}
     - Class: 114
-      Script: {instanceID: 6146}
+      Script: {instanceID: 6108}
     - Class: 114
-      Script: {instanceID: 6594}
+      Script: {instanceID: 6148}
     - Class: 114
-      Script: {instanceID: 6644}
+      Script: {instanceID: 6596}
     - Class: 114
-      Script: {instanceID: 6654}
+      Script: {instanceID: 6646}
     - Class: 114
-      Script: {instanceID: 6894}
+      Script: {instanceID: 6656}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 6896}
     - Class: 114
-      Script: {instanceID: 7218}
+      Script: {instanceID: 7100}
     - Class: 114
-      Script: {instanceID: 7506}
+      Script: {instanceID: 7220}
     - Class: 114
-      Script: {instanceID: 7514}
+      Script: {instanceID: 7510}
     - Class: 114
-      Script: {instanceID: 8256}
+      Script: {instanceID: 7520}
     - Class: 114
-      Script: {instanceID: 8576}
+      Script: {instanceID: 8262}
     - Class: 114
-      Script: {instanceID: 8662}
+      Script: {instanceID: 8582}
     - Class: 114
-      Script: {instanceID: 8910}
+      Script: {instanceID: 8668}
     - Class: 114
-      Script: {instanceID: 9298}
+      Script: {instanceID: 8916}
     - Class: 114
-      Script: {instanceID: 9390}
+      Script: {instanceID: 9396}
     - Class: 114
-      Script: {instanceID: 9552}
+      Script: {instanceID: 9558}
     - Class: 114
-      Script: {instanceID: 9930}
-    - Class: 114
-      Script: {instanceID: 26582}
+      Script: {instanceID: 9936}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1008,7 +1003,7 @@ ScriptsOnlyBuild:
     className: SetRoomCustomPropertyUIForm
   - hash:
       serializedVersion: 2
-      Hash: 70292dfa443731c0a6c289f36107d030
+      Hash: d759928b41d400117d2cd06ba350d940
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion
     className: ChampionController
@@ -1168,6 +1163,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 3e57e6f03c62c3c46add3adc3fae659c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Champion.Actions
+    className: BasicAttack
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -1683,7 +1684,7 @@ ScriptsOnlyBuild:
       Hash: 9017d431954c1d4531f83406bbe4db54
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion.Actions
-    className: KingMove
+    className: BasicMove
   - hash:
       serializedVersion: 2
       Hash: 267e1e00a8f1d106bd614339db235595
@@ -2184,12 +2185,6 @@ ScriptsOnlyBuild:
     className: UnityOnMouseOverMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b434e11a76d98cd9e18ac5e3561c70f3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: TavernOfChampions.Champion.Actions
-    className: ActionSpawner
-  - hash:
-      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -2356,12 +2351,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 99d7dda0dca2a6eec657f3a705c3d595
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: TavernOfChampions.Champion.Actions
-    className: RangedAttack
   platform: 19
   scenePathNames:
   - Assets/Scenes/Rooms.unity

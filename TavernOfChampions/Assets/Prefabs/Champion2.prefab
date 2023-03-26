@@ -169,7 +169,8 @@ MonoBehaviour:
   _actionCardSprite: {fileID: 21300000, guid: 862153f75f22ac84a8e24132eeda2133, type: 3}
   _attacksPerTurn: 1
   _radiuses: 0200000004000000
-  damage: 20
+  _baseDamage: 20
+  _rolldamageFormula: 2d20!
 --- !u!1 &6259761709702691412
 GameObject:
   m_ObjectHideFlags: 0

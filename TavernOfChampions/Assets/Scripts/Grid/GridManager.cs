@@ -91,7 +91,10 @@ namespace TavernOfChampions.Grid
         {
             if(_selecitonManager.SelectedChampions.Any())
             {
-                base.photonView.RPC("SpawnChampion", RpcTarget.All, _selecitonManager.SelectedChampions.Dequeue(), tile, PhotonNetwork.LocalPlayer);
+                if(!GetChampion(tile))
+                {
+                    base.photonView.RPC("SpawnChampion", RpcTarget.All, _selecitonManager.SelectedChampions.Dequeue(), tile, PhotonNetwork.LocalPlayer);
+                }
             }
             else
             {
@@ -108,7 +111,7 @@ namespace TavernOfChampions.Grid
                 }
                 else
                 {
-                    SelectedChampion.CurrentAction.photonView.RPC("Execute", RpcTarget.All, PhotonNetwork.LocalPlayer, tile);
+                    SelectedChampion.CurrentAction.Execute(tile);
                 }
             }
         }

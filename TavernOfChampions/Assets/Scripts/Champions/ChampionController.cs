@@ -38,13 +38,14 @@ namespace TavernOfChampions.Champion
         [SerializeField] private ChampionOutline _outline;
         [SerializeField] private int _maxHp;
         [SerializeField] private int _maxArmor;
-        [SerializeField] private int _block;
+        [SerializeField] private int _maxBlock;
 
         private GridManager _gridManager;
         private TurnManager _turnManager;
         private GameLogger _logger;
         private int _hp;
         private int _armor;
+        private int _block;
         
         public void Initialize(GridManager gridManager, TurnManager turnManager, Vector2Int location, Player owner)
         {
@@ -55,9 +56,11 @@ namespace TavernOfChampions.Champion
             Owner = owner;
             _hp = _maxHp;
             _armor = _maxArmor;
+            _block = _maxBlock;
             
             InitializeActions();
-            _turnManager.OnMoveEnd += () => { _currentAction = null; };
+            _turnManager.OnMoveEnd += () => { CurrentAction = null; };
+            _turnManager.OnMoveEnd += () => { _block = _maxBlock; };
             _outline.ChangeOutlineColor(owner != PhotonNetwork.LocalPlayer);
         }
 
@@ -77,8 +80,11 @@ namespace TavernOfChampions.Champion
 
         public void TakeDamage(int damage)
         {
-            _logger.Info($"Champion { gameObject } block absorbed { Mathf.Clamp(damage, 0, _block) } damage", LoggerType.CHAMPION, this);
-            damage = Mathf.Clamp(damage - _block, 0, _MAX_AVAILABLE_DAMAGE);
+            var damageAfterBlock = damage - _block;
+
+            _logger.Info($"Champions block { gameObject } got reduced by { damage }", LoggerType.CHAMPION, this);
+            _block = Mathf.Clamp(_block - damage, 0, _maxBlock);
+            damage = Mathf.Clamp(damageAfterBlock, 0, damage);
 
             var damageAfterArmor = damage - _armor;
 

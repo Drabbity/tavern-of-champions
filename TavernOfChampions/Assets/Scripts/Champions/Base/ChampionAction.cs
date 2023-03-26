@@ -21,11 +21,9 @@ namespace TavernOfChampions.Champion.Actions
             GetComponent<PhotonView>().ViewID = _gridManager.ChampionViewId;
         }
 
-        [PunRPC]
         public abstract Vector2Int[] GetLegalMoves();
 
-        [PunRPC]
-        public abstract void Execute(Player player, Vector2Int tile);
+        public abstract void Execute(Vector2Int tile);
     }
 }
 
