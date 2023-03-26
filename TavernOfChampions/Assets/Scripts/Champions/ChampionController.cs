@@ -51,6 +51,7 @@ namespace TavernOfChampions.Champion
         [SerializeField] private int _maxHp;
         [SerializeField] private int _maxArmor;
         [SerializeField] private int _maxBlock;
+        [SerializeField] private Transform _hpBar;
 
         private GridManager _gridManager;
         private TurnManager _turnManager;
@@ -91,29 +92,53 @@ namespace TavernOfChampions.Champion
             ActionCardsList.Instance.ClearList();
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, int piercingDamage)
         {
-            var damageAfterBlock = damage - _block;
+            damage = BlockDamage(damage);
+            damage = ArmorDamage(damage);
+            HPDamage(damage, piercingDamage);
 
-            _logger.Info($"Champions block { gameObject } got damaged by { damage }", LoggerType.CHAMPION, this);
-            _block = Mathf.Clamp(_block - damage, 0, _maxBlock);
-            damage = Mathf.Clamp(damageAfterBlock, 0, damage);
+            var hpBarScale = _hpBar.transform.localScale;
+            hpBarScale.x = (float)_hp / _maxHp;
+            _hpBar.transform.localScale = hpBarScale;
 
-            var damageAfterArmor = damage - _armor;
-
-            _logger.Info($"Champions armor { gameObject } got damaged by { damage }", LoggerType.CHAMPION, this);
-            _armor = Mathf.Clamp(_armor - damage, 0, _maxArmor);
-            damage = Mathf.Clamp(damageAfterArmor, 0, damage);
-
-            _logger.Info($"Champions  { gameObject } was damaged by { damage }", LoggerType.CHAMPION, this);
-            _hp -= damage;
-
-            if (_hp <= 0)
+            if(_hp <= 0)
             {
+                _logger.Info($"Champion { gameObject } was killed!", LoggerType.CHAMPION, this);
                 gameObject.SetActive(false);
-                _logger.Info($"Champions { gameObject } died", LoggerType.CHAMPION, this);
             }
-                
+        }
+
+        private int BlockDamage(int damage)
+        {
+            var damageAbsorbed = Mathf.Clamp(damage, 0, _block);
+            var damageLeft = Mathf.Clamp(damage - _block, 0, damage);
+
+            _block = Mathf.Clamp(_block - damage, 0, _maxBlock);
+            _logger.Info($"Champions block { gameObject } absorbed { damageAbsorbed } damage. Block left: { _block }", LoggerType.CHAMPION, this);
+            
+            return damageLeft;
+        }
+
+        private int ArmorDamage(int damage)
+        {
+            var damageAbsorbed = Mathf.Clamp(damage, 0, _armor);
+            var damageLeft = Mathf.Clamp(damage - _armor, 0, damage);
+
+            _armor = Mathf.Clamp(_armor - damage, 0, _maxArmor);
+            _logger.Info($"Champions armor { gameObject } absorbed { damageAbsorbed } damage. Armor left: { _armor }", LoggerType.CHAMPION, this);
+
+            return damageLeft;
+        }
+
+        private void HPDamage(int damage, int piercingDamage)
+        {
+            var damageAbsorbed = Mathf.Clamp(damage, 0, _hp);
+
+            damage = damage < piercingDamage ? piercingDamage : damage;
+
+            _hp = Mathf.Clamp(_hp - damage, 0, _maxHp);
+            _logger.Info($"Champions health { gameObject } damaged by { damageAbsorbed }. Health left: { _hp }", LoggerType.CHAMPION, this);
         }
 
         private void InitializeActions()

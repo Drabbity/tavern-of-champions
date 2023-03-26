@@ -12,6 +12,7 @@ namespace TavernOfChampions.Champion.Actions
         [SerializeField] private List<int> _radiuses;
         [SerializeField] private int _baseDamage = 20;
         [SerializeField] private string _rolldamageFormula = "";
+        [SerializeField] private int _piercingDamage = 0;
         [SerializeField] private bool _canAttackInMove = false;
 
         private int _attacks;
@@ -40,7 +41,7 @@ namespace TavernOfChampions.Champion.Actions
         [PunRPC]
         private void Execute_RPC(Vector2Int tile, int damage)
         {
-            _gridManager.GetChampion(tile).TakeDamage(damage);
+            _gridManager.GetChampion(tile).TakeDamage(damage, _piercingDamage);
         }
 
         public override Vector2Int[] GetLegalMoves()

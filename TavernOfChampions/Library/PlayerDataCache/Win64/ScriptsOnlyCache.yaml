@@ -1008,7 +1008,7 @@ ScriptsOnlyBuild:
     className: SetRoomCustomPropertyUIForm
   - hash:
       serializedVersion: 2
-      Hash: d759928b41d400117d2cd06ba350d940
+      Hash: 4a094eac1a9ff14f34d795893f3006a1
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion
     className: ChampionController
@@ -1170,7 +1170,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 5636f0a29ad9221714e61dfe180f1c85
+      Hash: ce9de95390ef2f881771b5bc7e31f541
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion.Actions
     className: BasicAttack
