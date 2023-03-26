@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - TavernOfChampions.CameraMovement.CameraZoom
     - TavernOfChampions.Champion.Actions.BasicAttack
     - TavernOfChampions.Champion.Actions.BasicMove
+    - TavernOfChampions.Champion.Actions.FreeMove
     - TavernOfChampions.Champion.Actions.UI.ActionCardsList
     - TavernOfChampions.Champion.ChampionController
     - TavernOfChampions.Champion.ChampionList
@@ -134,57 +135,59 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3186}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3436}
     - Class: 114
-      Script: {instanceID: 4216}
+      Script: {instanceID: 4218}
     - Class: 114
-      Script: {instanceID: 4248}
+      Script: {instanceID: 4250}
     - Class: 114
-      Script: {instanceID: 4818}
+      Script: {instanceID: 4820}
     - Class: 114
-      Script: {instanceID: 4854}
+      Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 5362}
+      Script: {instanceID: 5364}
     - Class: 114
-      Script: {instanceID: 5578}
+      Script: {instanceID: 5580}
     - Class: 114
-      Script: {instanceID: 5708}
+      Script: {instanceID: 5710}
     - Class: 114
-      Script: {instanceID: 5918}
+      Script: {instanceID: 5920}
     - Class: 114
-      Script: {instanceID: 6050}
+      Script: {instanceID: 6052}
     - Class: 114
-      Script: {instanceID: 6062}
+      Script: {instanceID: 6064}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6150}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6498}
     - Class: 114
-      Script: {instanceID: 6854}
+      Script: {instanceID: 6856}
     - Class: 114
-      Script: {instanceID: 6896}
+      Script: {instanceID: 6898}
     - Class: 114
-      Script: {instanceID: 6924}
+      Script: {instanceID: 6926}
     - Class: 114
-      Script: {instanceID: 7100}
+      Script: {instanceID: 7102}
     - Class: 114
-      Script: {instanceID: 7220}
+      Script: {instanceID: 7222}
     - Class: 114
-      Script: {instanceID: 7496}
+      Script: {instanceID: 7498}
     - Class: 114
-      Script: {instanceID: 7510}
+      Script: {instanceID: 7512}
     - Class: 114
-      Script: {instanceID: 8210}
+      Script: {instanceID: 7738}
     - Class: 114
-      Script: {instanceID: 8390}
+      Script: {instanceID: 8214}
     - Class: 114
-      Script: {instanceID: 8582}
+      Script: {instanceID: 8394}
     - Class: 114
-      Script: {instanceID: 8656}
+      Script: {instanceID: 8586}
     - Class: 114
-      Script: {instanceID: 8920}
+      Script: {instanceID: 8660}
     - Class: 114
-      Script: {instanceID: 9592}
+      Script: {instanceID: 8924}
+    - Class: 114
+      Script: {instanceID: 9596}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -267,73 +270,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3186}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3436}
     - Class: 114
-      Script: {instanceID: 3988}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4216}
-    - Class: 114
-      Script: {instanceID: 4490}
+      Script: {instanceID: 4218}
     - Class: 114
       Script: {instanceID: 4492}
     - Class: 114
-      Script: {instanceID: 4692}
+      Script: {instanceID: 4494}
     - Class: 114
-      Script: {instanceID: 4818}
+      Script: {instanceID: 4694}
     - Class: 114
-      Script: {instanceID: 4854}
+      Script: {instanceID: 4820}
     - Class: 114
-      Script: {instanceID: 4882}
+      Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 5216}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 5302}
+      Script: {instanceID: 5218}
     - Class: 114
-      Script: {instanceID: 5362}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 5638}
+      Script: {instanceID: 5364}
     - Class: 114
-      Script: {instanceID: 5894}
+      Script: {instanceID: 5640}
     - Class: 114
-      Script: {instanceID: 6038}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 6048}
+      Script: {instanceID: 6040}
     - Class: 114
-      Script: {instanceID: 6072}
+      Script: {instanceID: 6050}
     - Class: 114
-      Script: {instanceID: 6108}
+      Script: {instanceID: 6074}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6110}
     - Class: 114
-      Script: {instanceID: 6596}
+      Script: {instanceID: 6150}
     - Class: 114
-      Script: {instanceID: 6646}
+      Script: {instanceID: 6598}
     - Class: 114
-      Script: {instanceID: 6656}
+      Script: {instanceID: 6648}
     - Class: 114
-      Script: {instanceID: 6896}
+      Script: {instanceID: 6658}
     - Class: 114
-      Script: {instanceID: 7100}
+      Script: {instanceID: 6898}
     - Class: 114
-      Script: {instanceID: 7220}
+      Script: {instanceID: 7102}
     - Class: 114
-      Script: {instanceID: 7510}
+      Script: {instanceID: 7222}
     - Class: 114
-      Script: {instanceID: 7520}
+      Script: {instanceID: 7512}
     - Class: 114
-      Script: {instanceID: 8262}
+      Script: {instanceID: 7522}
     - Class: 114
-      Script: {instanceID: 8582}
+      Script: {instanceID: 7738}
     - Class: 114
-      Script: {instanceID: 8668}
+      Script: {instanceID: 8266}
     - Class: 114
-      Script: {instanceID: 8916}
+      Script: {instanceID: 8586}
     - Class: 114
-      Script: {instanceID: 9396}
+      Script: {instanceID: 8672}
     - Class: 114
-      Script: {instanceID: 9558}
+      Script: {instanceID: 8920}
     - Class: 114
-      Script: {instanceID: 9936}
+      Script: {instanceID: 9400}
+    - Class: 114
+      Script: {instanceID: 9562}
+    - Class: 114
+      Script: {instanceID: 9940}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1165,7 +1170,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 3e57e6f03c62c3c46add3adc3fae659c
+      Hash: 5636f0a29ad9221714e61dfe180f1c85
     assemblyName: Assembly-CSharp.dll
     namespaceName: TavernOfChampions.Champion.Actions
     className: BasicAttack
@@ -1781,6 +1786,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: IsConnectedAndReadyProperty
+  - hash:
+      serializedVersion: 2
+      Hash: 9017d431954c1d4531f83406bbe4db54
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Champion.Actions
+    className: FreeMove
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a

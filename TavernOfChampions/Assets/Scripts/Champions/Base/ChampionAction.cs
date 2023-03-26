@@ -1,5 +1,4 @@
 using Photon.Pun;
-using Photon.Realtime;
 using TavernOfChampions.Grid;
 using UnityEngine;
 
@@ -21,9 +20,9 @@ namespace TavernOfChampions.Champion.Actions
             GetComponent<PhotonView>().ViewID = _gridManager.ChampionViewId;
         }
 
-        public abstract Vector2Int[] GetLegalMoves();
-
         public abstract void Execute(Vector2Int tile);
+
+        public abstract Vector2Int[] GetLegalMoves();
     }
 }
 

@@ -34,6 +34,18 @@ namespace TavernOfChampions.Champion
 
         public Vector2Int CurrentPosition { get; set; }
 
+        public bool HasMoved
+        {
+            get => _hasMoved;
+
+            set
+            {
+                if (value)
+                    _hasMoved = true;
+            }
+        }
+        private bool _hasMoved = false;
+
         [SerializeField] private ChampionAction[] _actions;
         [SerializeField] private ChampionOutline _outline;
         [SerializeField] private int _maxHp;
@@ -61,6 +73,7 @@ namespace TavernOfChampions.Champion
             InitializeActions();
             _turnManager.OnMoveEnd += () => { CurrentAction = null; };
             _turnManager.OnMoveEnd += () => { _block = _maxBlock; };
+            _turnManager.OnMoveEnd += () => { _hasMoved = false; };
             _outline.ChangeOutlineColor(owner != PhotonNetwork.LocalPlayer);
         }
 
@@ -82,7 +95,7 @@ namespace TavernOfChampions.Champion
         {
             var damageAfterBlock = damage - _block;
 
-            _logger.Info($"Champions block { gameObject } got reduced by { damage }", LoggerType.CHAMPION, this);
+            _logger.Info($"Champions block { gameObject } got damaged by { damage }", LoggerType.CHAMPION, this);
             _block = Mathf.Clamp(_block - damage, 0, _maxBlock);
             damage = Mathf.Clamp(damageAfterBlock, 0, damage);
 

@@ -12,10 +12,9 @@ namespace TavernOfChampions.Champion.Actions
         [SerializeField] private List<int> _radiuses;
         [SerializeField] private int _baseDamage = 20;
         [SerializeField] private string _rolldamageFormula = "";
+        [SerializeField] private bool _canAttackInMove = false;
 
         private int _attacks;
-
-        private readonly List<Vector2Int> _attackableTiles = new List<Vector2Int>();
 
         public override void Initialize(GridManager gridManager, ChampionController championController, TurnManager turnManager)
         {
@@ -27,12 +26,15 @@ namespace TavernOfChampions.Champion.Actions
 
         public override void Execute(Vector2Int tile)
         {
-            var damage = _baseDamage + DiceRoller.RollDice(_rolldamageFormula).Sum();
-            _attacks--;
+            if(_gridManager.GetChampion(tile))
+            {
+                var damage = _baseDamage + DiceRoller.RollDice(_rolldamageFormula).Sum();
+                _attacks--;
 
-            photonView.RPC("Execute_RPC", RpcTarget.All, tile, damage);
+                photonView.RPC("Execute_RPC", RpcTarget.All, tile, damage);
 
-            _championController.CurrentAction = this;
+                _championController.CurrentAction = this;
+            }
         }
 
         [PunRPC]
@@ -43,15 +45,15 @@ namespace TavernOfChampions.Champion.Actions
 
         public override Vector2Int[] GetLegalMoves()
         {
-            _attackableTiles.Clear();
+            var attackableTiles = new List<Vector2Int>();
 
-            if(_attacks > 0)
+            if(_attacks > 0 && (_canAttackInMove || !_championController.HasMoved))
             {
                 foreach (var radius in _radiuses)
-                    _attackableTiles.AddRange(TileSelectorPresets.SelectRadius(radius, _championController.CurrentPosition));
+                    attackableTiles.AddRange(TileSelectorPresets.SelectRadius(radius, _championController.CurrentPosition));
             }
 
-            return LegalTileValidation.ValidateChampions(_attackableTiles, _gridManager, _championController.Owner).ToArray();
+            return LegalTileValidation.ValidateChampions(attackableTiles, _gridManager, _championController.Owner).ToArray();
         }
     }
 }
