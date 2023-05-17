@@ -25,9 +25,7 @@ namespace TavernOfChampions.Champion.Actions.UI
             foreach(var action in actions)
             {
                 var newCard = Instantiate(_cardPrefab, transform);
-                newCard.GetComponent<Image>().sprite = action.ActionCardSprite;
-                newCard.GetComponent<Button>().onClick.AddListener(() => { controller.CurrentAction = action; });
-
+                newCard.GetComponent<ActionCard>().SetUp(action.ActionCardSymbolSprite, () => { controller.CurrentAction = action; });
                 _cards.Add(newCard);
             }
         }

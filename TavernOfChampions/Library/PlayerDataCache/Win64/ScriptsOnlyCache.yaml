@@ -6,6 +6,9 @@ ScriptsOnlyBuild:
     - TavernOfChampions.Champion.Actions.BasicAttack
     - TavernOfChampions.Champion.Actions.BasicMove
     - TavernOfChampions.Champion.Actions.FreeMove
+    - TavernOfChampions.Champion.Actions.PrepareDamage
+    - TavernOfChampions.Champion.Actions.PrepareScope
+    - TavernOfChampions.Champion.Actions.UI.ActionCard
     - TavernOfChampions.Champion.Actions.UI.ActionCardsList
     - TavernOfChampions.Champion.ChampionController
     - TavernOfChampions.Champion.ChampionList
@@ -16,13 +19,14 @@ ScriptsOnlyBuild:
     - TavernOfChampions.Grid.GridManager
     - TavernOfChampions.Grid.GridTile
     - TavernOfChampions.Grid.GridVisualizer
-    - TavernOfChampions.Grid.TurnManager
     - TavernOfChampions.Logging.GameLogger
     - TavernOfChampions.Network.Connect
     - TavernOfChampions.Network.Menu.OutputRoomName
     - TavernOfChampions.Network.Menu.PlayerReady
     - TavernOfChampions.Network.Menu.RoomCreate
     - TavernOfChampions.Network.Menu.RoomJoin
+    - TavernOfChampions.Turn.TurnManager
+    - TavernOfChampions.Turn.UI.TurnDisplayer
     - TavernOfChampions.UI.ChampionSelection
     - TavernOfChampions.UI.ChampionSelectionGrid
     - TavernOfChampions.UI.Menu.MenuSwitcher
@@ -125,17 +129,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 1586}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 2750}
+      Script: {instanceID: 2922}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3186}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3436}
+      Script: {instanceID: 3546}
     - Class: 114
       Script: {instanceID: 4218}
     - Class: 114
@@ -188,6 +192,14 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8924}
     - Class: 114
       Script: {instanceID: 9596}
+    - Class: 114
+      Script: {instanceID: 9830}
+    - Class: 114
+      Script: {instanceID: 27996}
+    - Class: 114
+      Script: {instanceID: 37906}
+    - Class: 114
+      Script: {instanceID: 37912}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -252,25 +264,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 1586}
+      Script: {instanceID: 1688}
     - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1786}
     - Class: 114
-      Script: {instanceID: 1788}
+      Script: {instanceID: 1872}
     - Class: 114
-      Script: {instanceID: 1874}
+      Script: {instanceID: 2020}
     - Class: 114
-      Script: {instanceID: 2022}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2498}
     - Class: 114
-      Script: {instanceID: 2500}
+      Script: {instanceID: 2922}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3186}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3436}
+      Script: {instanceID: 3546}
     - Class: 114
       Script: {instanceID: 3990}
     - Class: 114
@@ -338,7 +350,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9562}
     - Class: 114
-      Script: {instanceID: 9940}
+      Script: {instanceID: 9942}
+    - Class: 114
+      Script: {instanceID: 37906}
+    - Class: 114
+      Script: {instanceID: 37912}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -394,12 +410,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
-  - hash:
-      serializedVersion: 2
-      Hash: 69415240821be7986b27e72bf9609a30
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: 7271649844da568677253e9df423644e
@@ -650,7 +660,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: TavernOfChampions.Grid
+    namespaceName: TavernOfChampions.Turn
     className: TurnManager
   - hash:
       serializedVersion: 2
@@ -868,6 +878,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: Bone
+  - hash:
+      serializedVersion: 2
+      Hash: 69415240821be7986b27e72bf9609a30
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -2310,6 +2326,12 @@ ScriptsOnlyBuild:
     className: UnityOnToggleValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 294bd128423fb3343491a18e889af11e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Champion.Actions.UI
+    className: ActionCard
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -2362,6 +2384,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: dcaf5c97bd70ee2b1cf70171637aded2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Turn.UI
+    className: TurnDisplayer
+  - hash:
+      serializedVersion: 2
+      Hash: e053854a0f332c61604c613399ce51df
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Champion.Actions
+    className: PrepareScope
+  - hash:
+      serializedVersion: 2
+      Hash: e053854a0f332c61604c613399ce51df
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TavernOfChampions.Champion.Actions
+    className: PrepareDamage
   platform: 19
   scenePathNames:
   - Assets/Scenes/Rooms.unity

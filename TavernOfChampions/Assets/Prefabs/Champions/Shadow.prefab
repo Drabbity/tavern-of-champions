@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24aaf4f7f2dbddc4099baed66dbfa6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionCardSprite: {fileID: 21300000, guid: 862153f75f22ac84a8e24132eeda2133, type: 3}
+  _actionCardSprite: {fileID: 21300000, guid: ff18c40ea95cf354aa2d64578c00add4, type: 3}
   _attacksPerTurn: 2
   _radiuses: 02000000
   _baseDamage: 5
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad509ab303c39b49b995c8109a63334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionCardSprite: {fileID: 21300000, guid: 862153f75f22ac84a8e24132eeda2133, type: 3}
+  _actionCardSprite: {fileID: 21300000, guid: 917859196f170734e8c7a06898409f9e, type: 3}
   _movesPerTurn: 3
 --- !u!1 &7016785617340527875
 GameObject:

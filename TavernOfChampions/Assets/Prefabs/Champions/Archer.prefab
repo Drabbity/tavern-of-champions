@@ -250,13 +250,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24aaf4f7f2dbddc4099baed66dbfa6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionCardSprite: {fileID: 21300000, guid: 862153f75f22ac84a8e24132eeda2133, type: 3}
+  _actionCardSprite: {fileID: 21300000, guid: ff18c40ea95cf354aa2d64578c00add4, type: 3}
   _attacksPerTurn: 1
-  _radiuses: 0200000004000000
+  _radiuses: 0200000003000000
   _baseDamage: 20
   _rolldamageFormula: 2d20!
   _piercingDamage: 5
-  _canAttackInMove: 0
 --- !u!1 &3294459761650331880
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +323,8 @@ Transform:
   - {fileID: 7723989542346225309}
   - {fileID: 6885458433310085698}
   - {fileID: 5753359346558422035}
+  - {fileID: 2095056938759100865}
+  - {fileID: 122877918416856930}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -403,13 +404,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ChampionBanner>k__BackingField: {fileID: 21300000, guid: cdf8cb4f464cc8f44a3c1d4ea4bd4e3b, type: 3}
   _actions:
-  - {fileID: 2634318680570681554}
+  - {fileID: 7875588644467751097}
   - {fileID: 7173440457439871937}
+  - {fileID: 2965266997011105509}
+  - {fileID: 8353894040881438529}
   _outline: {fileID: 6650858859540204575}
   _maxHp: 15
   _maxArmor: 5
-  _maxBlock: 0
+  _block: 0
   _hpBar: {fileID: 7723989542346225309}
+  <CanAttackInMove>k__BackingField: 0
 --- !u!1 &6469931686442191523
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6885458433310085698}
   - component: {fileID: 2141636326914011369}
-  - component: {fileID: 2634318680570681554}
+  - component: {fileID: 7875588644467751097}
   m_Layer: 0
   m_Name: Move
   m_TagString: Untagged
@@ -465,7 +469,7 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2634318680570681554
+--- !u!114 &7875588644467751097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,10 +478,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6469931686442191523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788ef6a65e4b4a34fbc2f1a0a308b4f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ad509ab303c39b49b995c8109a63334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionCardSprite: {fileID: 21300000, guid: 862153f75f22ac84a8e24132eeda2133, type: 3}
+  _actionCardSprite: {fileID: 0}
   _movesPerTurn: 2
 --- !u!1 &7016785617340527875
 GameObject:
@@ -564,3 +568,147 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!1 &7079251117611520247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095056938759100865}
+  - component: {fileID: 2069334076599597353}
+  - component: {fileID: 2965266997011105509}
+  m_Layer: 0
+  m_Name: PrepareScope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095056938759100865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079251117611520247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5379970023119805479}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069334076599597353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079251117611520247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2965266997011105509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079251117611520247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e323dcbe3719cfa41ad1b37df4d06246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionCardSprite: {fileID: 21300000, guid: 7e916fca79860d3438921961072d4c44, type: 3}
+  _allowedActions:
+  - {fileID: 8353894040881438529}
+  _basicAttack: {fileID: 7173440457439871937}
+  _maxPreparations: 3
+--- !u!1 &7181825419469726089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122877918416856930}
+  - component: {fileID: 7036371211044524674}
+  - component: {fileID: 8353894040881438529}
+  m_Layer: 0
+  m_Name: PrepareDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122877918416856930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181825419469726089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5379970023119805479}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7036371211044524674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181825419469726089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &8353894040881438529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181825419469726089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5d575cfd69e7f44b872fb075c81dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionCardSprite: {fileID: 21300000, guid: 7c40e4c3e5d45e4478806c979f72e0fa, type: 3}
+  _allowedActions:
+  - {fileID: 2965266997011105509}
+  _basicAttack: {fileID: 7173440457439871937}
+  _maxPreparations: 2

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using Photon.Pun;
 using Photon.Realtime;
+using TavernOfChampions.Turn;
 
 namespace TavernOfChampions.Grid
 {

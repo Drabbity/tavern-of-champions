@@ -1,5 +1,6 @@
 using Photon.Pun;
 using TavernOfChampions.Grid;
+using TavernOfChampions.Turn;
 using UnityEngine;
 
 namespace TavernOfChampions.Champion.Actions
@@ -7,7 +8,7 @@ namespace TavernOfChampions.Champion.Actions
     [RequireComponent(typeof(PhotonView))]
     public abstract class ChampionAction : MonoBehaviourPun
     {
-        public Sprite ActionCardSprite { get => _actionCardSprite; }
+        public Sprite ActionCardSymbolSprite { get => _actionCardSprite; }
         [SerializeField] private Sprite _actionCardSprite;
 
         protected GridManager _gridManager;
