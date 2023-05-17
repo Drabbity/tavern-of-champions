@@ -20,12 +20,10 @@ namespace TavernOfChampions.Champion.Actions
 
         public override void Execute(Vector2Int tile)
         {
-            _championController.HasMoved = true;
             _moves--;
 
             photonView.RPC("Execute_RPC", RpcTarget.All, tile);
-
-            _championController.CurrentAction = this;
+            base.Execute(tile);
         }
 
         [PunRPC]

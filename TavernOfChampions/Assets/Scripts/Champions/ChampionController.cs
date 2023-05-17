@@ -34,31 +34,32 @@ namespace TavernOfChampions.Champion
 
         public Vector2Int CurrentPosition { get; set; }
 
-        public bool HasMoved
+        public ChampionAction UsedAction
         {
-            get => _hasMoved;
+            get => _usedAction;
 
             set
             {
                 if (value)
-                    _hasMoved = true;
+                    _usedAction = value;
             }
         }
-        private bool _hasMoved = false;
+        private ChampionAction _usedAction = null;
 
         [SerializeField] private ChampionAction[] _actions;
         [SerializeField] private ChampionOutline _outline;
         [SerializeField] private int _maxHp;
         [SerializeField] private int _maxArmor;
-        [SerializeField] private int _maxBlock;
+        [SerializeField] private int _block;
         [SerializeField] private Transform _hpBar;
+
+        [field: SerializeField] public bool CanAttackInMove { get; private set; } = false;
 
         private GridManager _gridManager;
         private TurnManager _turnManager;
         private GameLogger _logger;
         private int _hp;
         private int _armor;
-        private int _block;
         
         public void Initialize(GridManager gridManager, TurnManager turnManager, Vector2Int location, Player owner)
         {
@@ -69,12 +70,11 @@ namespace TavernOfChampions.Champion
             Owner = owner;
             _hp = _maxHp;
             _armor = _maxArmor;
-            _block = _maxBlock;
             
             InitializeActions();
             _turnManager.OnMoveEnd += () => { CurrentAction = null; };
-            _turnManager.OnMoveEnd += () => { _block = _maxBlock; };
-            _turnManager.OnMoveEnd += () => { _hasMoved = false; };
+            _turnManager.OnMoveEnd += () => { _armor = _maxArmor; };
+            _turnManager.OnMoveEnd += () => { _usedAction = null; };
             _outline.ChangeOutlineColor(owner != PhotonNetwork.LocalPlayer);
         }
 
@@ -91,6 +91,8 @@ namespace TavernOfChampions.Champion
         {
             ActionCardsList.Instance.ClearList();
         }
+
+        #region TakeDamage
 
         public void TakeDamage(int damage, int piercingDamage)
         {
@@ -114,8 +116,7 @@ namespace TavernOfChampions.Champion
             var damageAbsorbed = Mathf.Clamp(damage, 0, _block);
             var damageLeft = Mathf.Clamp(damage - _block, 0, damage);
 
-            _block = Mathf.Clamp(_block - damage, 0, _maxBlock);
-            _logger.Info($"Champions block { gameObject } absorbed { damageAbsorbed } damage. Block left: { _block }", LoggerType.CHAMPION, this);
+            _logger.Info($"Champions block { gameObject } absorbed { damageAbsorbed } damage", LoggerType.CHAMPION, this);
             
             return damageLeft;
         }
@@ -140,6 +141,8 @@ namespace TavernOfChampions.Champion
             _hp = Mathf.Clamp(_hp - damage, 0, _maxHp);
             _logger.Info($"Champions health { gameObject } damaged by { damageAbsorbed }. Health left: { _hp }", LoggerType.CHAMPION, this);
         }
+
+        #endregion
 
         private void InitializeActions()
         {

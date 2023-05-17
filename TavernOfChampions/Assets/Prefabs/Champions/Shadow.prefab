@@ -204,7 +204,6 @@ MonoBehaviour:
   _baseDamage: 5
   _rolldamageFormula: 2d6!
   _piercingDamage: 4
-  _canAttackInMove: 1
 --- !u!1 &6259761709702691412
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,8 +323,9 @@ MonoBehaviour:
   _outline: {fileID: 6650858859540204575}
   _maxHp: 10
   _maxArmor: 0
-  _maxBlock: 0
+  _block: 0
   _hpBar: {fileID: 2324058160884148278}
+  <CanAttackInMove>k__BackingField: 1
 --- !u!1 &6469931686442191523
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ namespace TavernOfChampions.Champion.Actions
         [SerializeField] private int _baseDamage = 20;
         [SerializeField] private string _rolldamageFormula = "";
         [SerializeField] private int _piercingDamage = 0;
-        [SerializeField] private bool _canAttackInMove = false;
 
         private int _attacks;
 
@@ -34,7 +33,7 @@ namespace TavernOfChampions.Champion.Actions
 
                 photonView.RPC("Execute_RPC", RpcTarget.All, tile, damage);
 
-                _championController.CurrentAction = this;
+                base.Execute(tile);
             }
         }
 
@@ -48,7 +47,7 @@ namespace TavernOfChampions.Champion.Actions
         {
             var attackableTiles = new List<Vector2Int>();
 
-            if(_attacks > 0 && (_canAttackInMove || !_championController.HasMoved))
+            if(_attacks > 0 && (_championController.CanAttackInMove || !_championController.UsedAction || _championController.UsedAction == this))
             {
                 foreach (var radius in _radiuses)
                     attackableTiles.AddRange(TileSelectorPresets.SelectRadius(radius, _championController.CurrentPosition));

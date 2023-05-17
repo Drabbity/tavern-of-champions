@@ -16,17 +16,17 @@ namespace TavernOfChampions.Champion.Actions
 
         public override Vector2Int[] GetLegalMoves()
         {
-            var _movableTiles = new List<Vector2Int>();
+            var movableTiles = new List<Vector2Int>();
 
-            if (_moves > 0)
+            if (_moves > 0 && (_championController.CanAttackInMove || !_championController.UsedAction || _championController.UsedAction == this))
             {
                 for (int x = -1; x <= 1; x++)
                     for (int y = -1; y <= 1; y++)
                         if (x != 0 || y != 0)
-                            _movableTiles.Add(_championController.CurrentPosition + new Vector2Int(x, y));
+                            movableTiles.Add(_championController.CurrentPosition + new Vector2Int(x, y));
             }
 
-            return LegalTileValidation.ValidateChampions(_movableTiles, _gridManager).ToArray();
+            return LegalTileValidation.ValidateChampions(movableTiles, _gridManager).ToArray();
         }
     }
 }

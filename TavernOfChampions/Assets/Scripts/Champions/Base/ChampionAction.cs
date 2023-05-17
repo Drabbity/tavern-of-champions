@@ -20,7 +20,11 @@ namespace TavernOfChampions.Champion.Actions
             GetComponent<PhotonView>().ViewID = _gridManager.ChampionViewId;
         }
 
-        public abstract void Execute(Vector2Int tile);
+        public virtual void Execute(Vector2Int tile)
+        {
+            _championController.CurrentAction = this;
+            _championController.UsedAction = this;
+        }
 
         public abstract Vector2Int[] GetLegalMoves();
     }
