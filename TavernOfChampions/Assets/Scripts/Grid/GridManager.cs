@@ -5,6 +5,7 @@ using System.Linq;
 using Photon.Pun;
 using Photon.Realtime;
 using TavernOfChampions.Turn;
+using Photon.Pun.UtilityScripts;
 
 namespace TavernOfChampions.Grid
 {
@@ -39,7 +40,7 @@ namespace TavernOfChampions.Grid
         [field: SerializeField] public Vector2Int GridSize { get; private set; }
 
         [SerializeField] private TurnManager _turnManager;
-        [SerializeField] private ChampionSelectionManager _selecitonManager;
+        [SerializeField] private ChampionSelectionManager _selectionManager;
         [SerializeField] private ChampionList _championList;
 
         private ChampionController[,] _championGrid;
@@ -60,7 +61,7 @@ namespace TavernOfChampions.Grid
             GridVisualizer.GenerateGrid(GridSize);
             _championGrid = GenerateChampionGrid(GridSize);
             _championParent = new GameObject("ChampionParent");
-            _selecitonManager.Initialize(_championList);
+            _selectionManager.Initialize(_championList);
         }
 
         private void Update()
@@ -90,11 +91,11 @@ namespace TavernOfChampions.Grid
 
         public void SelectTile(Vector2Int tile)
         {
-            if(_selecitonManager.SelectedChampions.Any())
+            if(_selectionManager.SelectedChampions.Any())
             {
                 if(!GetChampion(tile))
                 {
-                    base.photonView.RPC("SpawnChampion", RpcTarget.All, _selecitonManager.SelectedChampions.Dequeue(), tile, PhotonNetwork.LocalPlayer);
+                    base.photonView.RPC("SpawnChampion", RpcTarget.All, _selectionManager.SelectedChampions.Dequeue(), tile, PhotonNetwork.LocalPlayer);
                 }
             }
             else

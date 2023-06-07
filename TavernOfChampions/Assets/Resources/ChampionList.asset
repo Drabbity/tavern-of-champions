@@ -15,8 +15,8 @@ MonoBehaviour:
   <Champions>k__BackingField:
     _keyValue:
     - Key: Archer
-      Value: {fileID: 5272424573085687261, guid: d47b242724c240a4ba5404e8afabc393, type: 3}
+      Value: {fileID: 7140527651320118193, guid: 5569ae341c0ce8c46acdfa65e494228c, type: 3}
     - Key: Shadow
-      Value: {fileID: 5272424573085687261, guid: 7a87ad148f51c1649ac49ff06e28595c, type: 3}
+      Value: {fileID: 4244266679092305542, guid: 8da436184ca058c46af26b1b94860a22, type: 3}
     - Key: Guardian
-      Value: {fileID: 5272424573085687261, guid: fc60ecf4404de144ea8926e40777969c, type: 3}
+      Value: {fileID: 106695832396895235, guid: c1c23c49f953ad245b6609facb2fdaa3, type: 3}

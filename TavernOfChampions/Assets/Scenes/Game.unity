@@ -240,7 +240,7 @@ MonoBehaviour:
   <GridVisualizer>k__BackingField: {fileID: 96856233}
   <GridSize>k__BackingField: {x: 16, y: 21}
   _turnManager: {fileID: 2078165183}
-  _selecitonManager: {fileID: 378628235}
+  _selectionManager: {fileID: 378628235}
   _championList: {fileID: 11400000, guid: 583d8c19a27486346adfdbb2fc7f5cd8, type: 2}
 --- !u!4 &93856991
 Transform:

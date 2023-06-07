@@ -19,7 +19,7 @@ namespace TavernOfChampions.Champion.Actions
         {
             var movableTiles = new List<Vector2Int>();
 
-            if (_moves > 0 && (_championController.CanAttackInMove || !_championController.UsedAction || _championController.UsedAction == this))
+            if (CanMove())
             {
                 var currentPosition = _championController.CurrentPosition;
 

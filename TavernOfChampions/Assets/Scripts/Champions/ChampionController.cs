@@ -1,5 +1,6 @@
 using Photon.Pun;
 using Photon.Realtime;
+using System;
 using TavernOfChampions.Champion.Actions;
 using TavernOfChampions.Champion.Actions.UI;
 using TavernOfChampions.Grid;
@@ -13,6 +14,7 @@ namespace TavernOfChampions.Champion
     {
         const int _MAX_AVAILABLE_DAMAGE = 1000;
         [field: SerializeField] public Sprite ChampionBanner { get; private set; }
+
         public ChampionAction CurrentAction
         {
             get { return _currentAction; }
@@ -35,14 +37,16 @@ namespace TavernOfChampions.Champion
 
         public Vector2Int CurrentPosition { get; set; }
 
+        public event Action OnActionUsed;
         public ChampionAction UsedAction
         {
             get => _usedAction;
 
             set
             {
-                if (value)
-                    _usedAction = value;
+                _usedAction = value;
+                if (_usedAction != null)
+                    OnActionUsed?.Invoke();
             }
         }
         private ChampionAction _usedAction = null;
@@ -55,6 +59,7 @@ namespace TavernOfChampions.Champion
         [SerializeField] private Transform _hpBar;
 
         [field: SerializeField] public bool CanAttackInMove { get; private set; } = false;
+        [field: SerializeField] public ActionStatusList ActionStatusList { get; private set; }
 
         private GridManager _gridManager;
         private TurnManager _turnManager;

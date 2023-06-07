@@ -30,20 +30,17 @@ namespace TavernOfChampions.Champion.Actions
 
         public override void Execute(Vector2Int tile)
         {
-            if(_gridManager.GetChampion(tile))
-            {
-                var damage = _baseDamage + DiceRoller.RollDice(_rolldamageFormula).Sum();
-                _attacks--;
-
-                photonView.RPC("Execute_RPC", RpcTarget.All, tile, damage);
-
-                base.Execute(tile);
-            }
+            photonView.RPC("Execute_RPC", RpcTarget.All, tile, DiceRoller.RollDice(_rolldamageFormula).Sum());
         }
 
         [PunRPC]
-        private void Execute_RPC(Vector2Int tile, int damage)
+        protected void Execute_RPC(Vector2Int tile, int diceRoll)
         {
+            base.Execute_RPC(tile);
+            _championController.CurrentAction = this;
+
+            _attacks--;
+            var damage = _baseDamage + diceRoll;
             _gridManager.GetChampion(tile).TakeDamage(damage * DamageMultiplier, _piercingDamage);
         }
 
@@ -51,7 +48,7 @@ namespace TavernOfChampions.Champion.Actions
         {
             var attackableTiles = new List<Vector2Int>();
 
-            if(_attacks > 0 && (_championController.CanAttackInMove || !_championController.UsedAction || _championController.UsedAction == this))
+            if(CanAttack())
             {
                 foreach (var radius in _radiuses)
                     attackableTiles.AddRange(TileSelectorPresets.SelectRadius(radius, _championController.CurrentPosition));
@@ -63,6 +60,12 @@ namespace TavernOfChampions.Champion.Actions
             }
 
             return LegalTileValidation.ValidateChampions(attackableTiles, _gridManager, _championController.Owner).ToArray();
+        }
+
+        private bool CanAttack()
+        {
+            return _attacks > 0 &&
+                (_championController.CanAttackInMove || !_championController.UsedAction || _championController.UsedAction == this);
         }
     }
 }
